@@ -71,7 +71,7 @@
         <div class="max-w-4xl mx-auto flex justify-between items-center">
             <span class="text-sm font-bold flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                Web & PDF印刷対応ガイド（写真追加可能）
+                Web & PDF印刷対応ガイド
             </span>
             <button onclick="window.print()" class="bg-gradient-to-r from-baystars-gold to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-white font-bold text-sm py-2 px-5 rounded-full shadow-lg transition transform hover:scale-105 flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -397,13 +397,6 @@
                                 <span class="text-xs text-slate-400 font-bold group-hover:text-slate-600 no-print">ここに選手写真を挿入</span>
                             </div>
                             
-                            <!-- 画像アップロード用の隠しinput -->
-                            <input type="file" id="input-watarai" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer z-20 no-print" onchange="previewImage(this, 'preview-watarai', 'placeholder-watarai')">
-                            
-                            <!-- 変更用ホバーオーバーレイ -->
-                            <div class="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] px-2 py-1 rounded-md z-30 opacity-0 group-hover:opacity-100 transition no-print pointer-events-none">
-                                📷 画像を変更
-                            </div>
                         </div>
                         
                         <div class="border-t border-slate-100 pt-3 space-y-2">
@@ -434,21 +427,14 @@
                         <div class="relative w-full h-44 bg-slate-100 rounded-xl flex flex-col items-center justify-center border-2 border-dashed border-slate-300 overflow-hidden group">
                             <!-- プレビュー表示用imgタグ -->
                             <!-- ※HTMLを直接編集する場合は、下の src="" の中に画像パス（例：morishita.jpg）を直接記入してください -->
-                            <img id="preview-morishita" src="" class="hidden absolute inset-0 w-full h-full object-cover z-10">
+                            <img id="preview-morishita" src="imege/morisita.jpeg" class="absolute inset-0 w-full h-full object-cover z-10">
                             
                             <!-- デフォルト表示 -->
-                            <div id="placeholder-morishita" class="text-center p-2 z-0 flex flex-col items-center">
+                            <div id="placeholder-morishita" class="hidden text-center p-2 z-0 flex flex-col items-center">
                                 <span class="text-4xl mb-1">🐯しょーた🔥</span>
                                 <span class="text-xs text-slate-400 font-bold group-hover:text-slate-600 no-print">ここに選手写真を挿入</span>
                             </div>
                             
-                            <!-- 画像アップロード用の隠しinput -->
-                            <input type="file" id="input-morishita" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer z-20 no-print" onchange="previewImage(this, 'preview-morishita', 'placeholder-morishita')">
-                            
-                            <!-- 変更用ホバーオーバーレイ -->
-                            <div class="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] px-2 py-1 rounded-md z-30 opacity-0 group-hover:opacity-100 transition no-print pointer-events-none">
-                                📷 画像を変更
-                            </div>
                         </div>
 
                         <div class="border-t border-slate-100 pt-3 space-y-2">
@@ -540,13 +526,8 @@
                     <!-- 画像アップロード対応の丸型アバター -->
                     <div class="relative w-16 h-16 rounded-full bg-slate-200 shrink-0 flex items-center justify-center font-bold text-2xl border-2 border-dashed border-slate-300 overflow-hidden">
                         <!-- ※HTML直接編集用：src="starman.jpg" のように書き換え可能 -->
-                        <img id="preview-mascot-sk" src="" class="hidden absolute inset-0 w-full h-full object-cover rounded-full z-10">
-                        <span id="placeholder-mascot-sk" class="z-0">🐹</span>
-                        <input type="file" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer z-20 no-print" onchange="previewImage(this, 'preview-mascot-sk', 'placeholder-mascot-sk')">
-                        <!-- ホバーオーバーレイ -->
-                        <div class="absolute inset-0 bg-black/40 text-[8px] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition no-print pointer-events-none z-30">
-                            📷
-                        </div>
+                        <img id="preview-mascot-sk" src="imege/suta.jpg" class="absolute inset-0 w-full h-full object-cover rounded-full z-10">
+                        <span id="placeholder-mascot-sk" class="hidden z-0">🐹</span>
                     </div>
                     <div>
                         <h3 class="font-extrabold text-baystars-navy">DB.スターマン & DB.キララ</h3>
@@ -561,13 +542,8 @@
                     <!-- 画像アップロード対応の丸型アバター -->
                     <div class="relative w-16 h-16 rounded-full bg-slate-200 shrink-0 flex items-center justify-center font-bold text-2xl border-2 border-dashed border-slate-300 overflow-hidden">
                         <!-- ※HTML直接編集用：src="bart.jpg" のように書き換え可能 -->
-                        <img id="preview-mascot-bc" src="kirara2025.jpg" class="hidden absolute inset-0 w-full h-full object-cover rounded-full z-10">
-                        <span id="placeholder-mascot-bc" class="z-0">👽</span>
-                        <input type="file" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer z-20 no-print" onchange="previewImage(this, 'preview-mascot-bc', 'placeholder-mascot-bc')">
-                        <!-- ホバーオーバーレイ -->
-                        <div class="absolute inset-0 bg-black/40 text-[8px] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition no-print pointer-events-none z-30">
-                            📷
-                        </div>
+                        <img id="preview-mascot-bc" src="imege/c&b.jpg" class="absolute inset-0 w-full h-full object-cover rounded-full z-10">
+                        <span id="placeholder-mascot-bc" class="hidden z-0">👽</span>
                     </div>
                     <div>
                         <h3 class="font-extrabold text-slate-800">バート ＆ チャピー</h3>
@@ -582,13 +558,8 @@
                     <!-- 画像アップロード対応の丸型アバター -->
                     <div class="relative w-16 h-16 rounded-full bg-slate-200 shrink-0 flex items-center justify-center font-bold text-2xl border-2 border-dashed border-slate-300 overflow-hidden">
                         <!-- ※HTML直接編集用：src="tolucky.jpg" のように書き換え可能 -->
-                        <img id="preview-mascot-to" src="" class="hidden absolute inset-0 w-full h-full object-cover rounded-full z-10">
-                        <span id="placeholder-mascot-to" class="z-0">🐯</span>
-                        <input type="file" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer z-20 no-print" onchange="previewImage(this, 'preview-mascot-to', 'placeholder-mascot-to')">
-                        <!-- ホバーオーバーレイ -->
-                        <div class="absolute inset-0 bg-black/40 text-[8px] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition no-print pointer-events-none z-30">
-                            📷
-                        </div>
+                        <img id="preview-mascot-to" src="tora.png" class="absolute inset-0 w-full h-full object-cover rounded-full z-10">
+                        <span id="placeholder-mascot-to" class="hidden z-0">🐯</span>
                     </div>
                     <div>
                         <h3 class="font-extrabold text-yellow-800 flex items-center gap-1.5">
