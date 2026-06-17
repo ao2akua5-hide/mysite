@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>横浜DeNAベイスターズ 観戦のしおり</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        baystars: {
+                            navy: '#002F6C',
+                            blue: '#005A9C',
+                            light: '#E6F0FA',
+                            gold: '#C5A059',
+                            dark: '#0A192F'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f0f4f8;
+        }
+        /* 印刷用スタイル調整 */
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+                font-size: 11pt;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-break-before {
+                page-break-before: always;
+            }
+            .print-avoid-break {
+                page-break-inside: avoid;
+            }
+            .print-card {
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+                background: #ffffff !important;
+            }
+            .print-bg-blue {
+                background-color: #002F6C !important;
+                color: #ffffff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .print-bg-light {
+                background-color: #f8fafc !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen pb-12">
+
+    <!-- 印刷用・操作用ヘッダー（Web表示時のみ） -->
+    <div class="no-print bg-baystars-dark text-white py-3 px-4 sticky top-0 z-50 shadow-md">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <span class="text-sm font-bold flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Web & PDF印刷対応ガイド（写真追加可能）
+            </span>
+            <button onclick="window.print()" class="bg-gradient-to-r from-baystars-gold to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-white font-bold text-sm py-2 px-5 rounded-full shadow-lg transition transform hover:scale-105 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                </svg>
+                PDF出力 / 印刷する
+            </button>
+        </div>
+    </div>
+
+    <!-- メインコンテナ -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 mt-6">
+
+        <!-- 1ページ目：カバー＆基本情報 -->
+        <div class="print-card bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 mb-8">
+            <!-- ヒーローヘッダー -->
+            <div class="print-bg-blue bg-gradient-to-br from-baystars-dark via-baystars-navy to-baystars-blue text-white p-8 relative overflow-hidden text-center sm:text-left">
+                <!-- 装飾用スタジアム風サークル（背景） -->
+                <div class="absolute right-0 bottom-0 opacity-10 transform translate-x-20 translate-y-20 no-print">
+                    <svg width="400" height="400" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="48" stroke="white" stroke-width="2" fill="none"/>
+                        <circle cx="50" cy="50" r="38" stroke="white" stroke-width="1" fill="none"/>
+                        <path d="M 50 2 L 50 98 M 2 50 L 98 50" stroke="white" stroke-dasharray="2"/>
+                    </svg>
+                </div>
+
+                <span class="inline-block bg-baystars-gold text-slate-900 text-xs font-black px-3 py-1.5 rounded-full uppercase tracking-wider mb-3 shadow-md">
+                    Special Event Match
+                </span>
+                <h1 class="text-3xl sm:text-4xl font-black tracking-tight leading-tight mb-2">
+                    🌟 横浜DeNAベイスターズ 観戦のしおり
+                </h1>
+                <p class="text-lg text-blue-100 font-medium">
+                    〜 2026.06.19 [FRI] vs 阪神タイガース 〜
+                </p>
+                <div class="mt-4 pt-4 border-t border-blue-900/50 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-blue-200">
+                    <p class="flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-baystars-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        横浜スタジアム (HAMASTA)
+                    </p>
+                    <p class="bg-blue-900/40 px-3 py-1 rounded-md">プロ野球のある街・横浜。いよいよ待ちに待った観戦当日です！</p>
+                </div>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-8">
+                <!-- 基本情報グリッド -->
+                <div>
+                    <h2 class="text-xl font-bold text-baystars-navy flex items-center gap-2 mb-4 pb-2 border-b border-slate-100">
+                        <span class="text-baystars-gold">📌</span> 試合・イベント・座席基本情報
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- 情報リスト -->
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 print-bg-light bg-slate-50 rounded-xl border border-slate-100">
+                                <span class="text-sm text-slate-500 font-bold">日時</span>
+                                <span class="font-bold text-slate-800">2026年6月19日（金）18:15 PB</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 print-bg-light bg-slate-50 rounded-xl border border-slate-100">
+                                <span class="text-sm text-slate-500 font-bold">対戦相手</span>
+                                <span class="font-bold text-red-600 flex items-center gap-1.5">
+                                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                                    阪神タイガース
+                                </span>
+                            </div>
+                            <div class="flex flex-col p-3 print-bg-light bg-slate-50 rounded-xl border border-slate-100">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-slate-500 font-bold">特別仕様</span>
+                                    <span class="font-bold text-baystars-blue text-xs bg-blue-100 px-2.5 py-1 rounded-full">SPECIAL UNIFORM SERIES</span>
+                                </div>
+                                <span class="text-xs text-slate-500 leading-relaxed">1846年の史上初公式戦「ベースボール記念日」を記念し、特別ユニフォームを着用して戦う3日間！</span>
+                            </div>
+                            <div class="flex flex-col p-3 print-bg-light bg-slate-50 rounded-xl border border-slate-100">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-sm text-slate-500 font-bold">冠イベント</span>
+                                    <span class="font-bold text-emerald-700 text-xs bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">マルハニチロはUmiosへGAME</span>
+                                </div>
+                                <span class="text-xs text-slate-500">協賛：Umios株式会社（2026年3月に社名変更）</span>
+                            </div>
+                        </div>
+
+                        <!-- 座席情報 ＆ ハマスタマップ -->
+                        <div class="flex flex-col justify-between p-4 bg-blue-50/50 border border-blue-100 rounded-2xl relative overflow-hidden">
+                            <div class="mb-3">
+                                <span class="text-xs text-blue-600 font-extrabold tracking-wider block uppercase">MY SEAT LOCATION</span>
+                                <p class="text-lg font-black text-baystars-navy mt-1 flex items-center gap-1">
+                                    1GATE 2通路 Sec.B319a 22段付近
+                                    <span class="animate-bounce">👈</span>
+                                </p>
+                            </div>
+                            <!-- ハマスタ簡易マップ (SVG) -->
+                            <div class="w-full h-44 bg-white rounded-xl border border-blue-100 shadow-inner flex items-center justify-center p-2">
+                                <svg viewBox="0 0 200 180" class="w-full h-full">
+                                    <!-- グラウンド（内野・外野） -->
+                                    <path d="M 100 130 L 40 70 A 80 80 0 0 1 160 70 Z" fill="#2e7d32" opacity="0.8"/>
+                                    <!-- 内野土部分 -->
+                                    <path d="M 100 130 L 60 90 A 50 50 0 0 1 140 90 Z" fill="#8d6e63"/>
+                                    <!-- ダイヤモンドベースライン -->
+                                    <rect x="85" y="85" width="30" height="30" fill="none" stroke="white" stroke-width="1.5" transform="rotate(45 100 100)"/>
+                                    <circle cx="100" cy="130" r="3" fill="white"/> <!-- 本塁 -->
+                                    <!-- スタンド外周（ハマスタの形） -->
+                                    <path d="M 100 160 C 20 160, 10 70, 100 10 C 190 70, 180 160, 100 160 Z" fill="none" stroke="#94a3b8" stroke-width="4"/>
+                                    <!-- 1塁側・ライト側スタンドエリア -->
+                                    <path d="M 100 160 C 150 160, 175 120, 160 70" fill="none" stroke="#cbd5e1" stroke-width="12" stroke-linecap="round"/>
+                                    <!-- マイシートのプロット -->
+                                    <path d="M 155 105 C 160 95, 162 85, 158 75" fill="none" stroke="#ef4444" stroke-width="16" stroke-linecap="round" opacity="0.3" class="animate-pulse"/>
+                                    <circle cx="158" cy="90" r="6" fill="#ef4444" stroke="white" stroke-width="2"/>
+                                    <!-- テキスト表示 -->
+                                    <text x="100" y="152" font-size="8" font-weight="bold" fill="#475569" text-anchor="middle">バックネット裏</text>
+                                    <text x="35" y="80" font-size="8" fill="#64748b" text-anchor="middle">3塁側(阪神)</text>
+                                    <text x="165" y="60" font-size="8" font-weight="bold" fill="#005A9C" text-anchor="middle">ライトスタンド</text>
+                                    <text x="145" y="115" font-size="7" font-weight="bold" fill="#ef4444">マイシートはココ！</text>
+                                    <path d="M 152 110 L 157 98" fill="none" stroke="#ef4444" stroke-width="1" marker-end="url(#arrow)"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- スペシャル特典 -->
+                <div class="p-6 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-2xl relative overflow-hidden print-avoid-break">
+                    <!-- アクセントリボン -->
+                    <div class="absolute -right-8 -top-8 bg-emerald-500 text-white text-xs font-black py-4 px-10 transform rotate-45 shadow-sm no-print">
+                        GIFT
+                    </div>
+                    <h3 class="text-lg font-black text-emerald-950 flex items-center gap-2 mb-2">
+                        🎁 本日のスペシャル来場特典！
+                    </h3>
+                    <p class="text-sm text-emerald-800 font-bold mb-3">
+                        当日来場先着20,000名様に、新社名「Umios」の贅沢ゼリーをプレゼント！ゲート入場時に忘れずにゲット！
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+                        <div class="bg-white/80 border border-emerald-200/50 p-3 rounded-xl flex items-center gap-2">
+                            <span class="text-2xl">🍑</span>
+                            <div>
+                                <h4 class="text-xs text-slate-500 font-bold">ミックスゼリー</h4>
+                                <p class="text-sm font-bold text-slate-800">フルティシエ ちょっと贅沢 ミックス</p>
+                            </div>
+                        </div>
+                        <div class="bg-white/80 border border-emerald-200/50 p-3 rounded-xl flex items-center gap-2">
+                            <span class="text-2xl">🍌</span>
+                            <div>
+                                <h4 class="text-xs text-slate-500 font-bold">アサイー＆バナナゼリー</h4>
+                                <p class="text-sm font-bold text-slate-800">フルティシエ ちょっと贅沢 アサイーバナナ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 持ち物チェックリスト（1ページ目下部または2ページ目） -->
+        <div class="print-card bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 print-avoid-break">
+            <h2 class="text-xl font-bold text-baystars-navy flex items-center gap-2 mb-2 pb-2 border-b border-slate-100">
+                <span>🎒</span> 観戦当日の持ち物チェックリスト
+            </h2>
+            <p class="text-xs text-slate-500 mb-6">出発前にチェック！ハマスタは傘が禁止されているためレインコート必須です！</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- リストA -->
+                <div class="space-y-3">
+                    <label class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer transition border border-slate-100">
+                        <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-baystars-blue focus:ring-baystars-blue mt-0.5 accent-blue-600">
+                        <div>
+                            <span class="font-bold text-slate-800 text-sm">観戦チケット</span>
+                            <p class="text-xs text-slate-500 mt-0.5">スマホのQR画面、または紙チケット</p>
+                        </div>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer transition border border-slate-100">
+                        <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-baystars-blue focus:ring-baystars-blue mt-0.5 accent-blue-600">
+                        <div>
+                            <span class="font-bold text-slate-800 text-sm">青い応援グッズ</span>
+                            <p class="text-xs text-slate-500 mt-0.5">ユニフォーム、応援タオル、カンフーバットなど</p>
+                        </div>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer transition border border-slate-100">
+                        <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-baystars-blue focus:ring-baystars-blue mt-0.5 accent-blue-600">
+                        <div>
+                            <span class="font-bold text-slate-800 text-sm">レインポンチョ（レインコート）</span>
+                            <p class="text-xs text-slate-500 mt-0.5">※ハマスタスタンド内は傘使用禁止です！</p>
+                        </div>
+                    </label>
+                </div>
+                <!-- リストB -->
+                <div class="space-y-3">
+                    <label class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer transition border border-slate-100">
+                        <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-baystars-blue focus:ring-baystars-blue mt-0.5 accent-blue-600">
+                        <div>
+                            <span class="font-bold text-slate-800 text-sm">汗拭きタオル・塩分タブレット</span>
+                            <p class="text-xs text-slate-500 mt-0.5">夕方でもスタンド内は熱気がこもります</p>
+                        </div>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer transition border border-slate-100">
+                        <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-baystars-blue focus:ring-baystars-blue mt-0.5 accent-blue-600">
+                        <div>
+                            <span class="font-bold text-slate-800 text-sm">ウェットティッシュ</span>
+                            <p class="text-xs text-slate-500 mt-0.5">開門後の絶品グルメを楽しむ際の必需品</p>
+                        </div>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer transition border border-slate-100">
+                        <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-baystars-blue focus:ring-baystars-blue mt-0.5 accent-blue-600">
+                        <div>
+                            <span class="font-bold text-slate-800 text-sm">大きめのゴミ袋</span>
+                            <p class="text-xs text-slate-500 mt-0.5">リュックや荷物を丸ごと包んで足元に置く用</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2ページ目：タイムスケジュール（改ページ調整） -->
+        <div class="print-card print-break-before bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
+            <h2 class="text-xl font-bold text-baystars-navy flex items-center gap-2 mb-6 pb-2 border-b border-slate-100">
+                <span>⏱️</span> 当日タイムスケジュール（イベント一体型！）
+            </h2>
+
+            <!-- タイムライン縦ライン -->
+            <div class="relative border-l-2 border-blue-100 ml-4 pl-6 space-y-6">
+                <!-- 16:15 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-1.5 w-6 h-6 rounded-full bg-baystars-navy border-4 border-white flex items-center justify-center"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+                        <span class="text-sm font-black text-baystars-navy bg-blue-50 px-2.5 py-1 rounded-md">16:15頃</span>
+                        <h4 class="font-bold text-slate-800 text-sm sm:text-base">【開門・入場開始】先着プレゼントGET！</h4>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-1 pl-1">早めに入場してUmiosゼリーをGETし、ハマスタ名物グルメを買い出しにいきましょう。</p>
+                </div>
+
+                <!-- 17:55 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-1.5 w-6 h-6 rounded-full bg-baystars-blue border-4 border-white flex items-center justify-center"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+                        <span class="text-sm font-black text-baystars-blue bg-blue-50 px-2.5 py-1 rounded-md">17:55</span>
+                        <h4 class="font-bold text-slate-800 text-sm sm:text-base">【スタメン発表】（試合開始20分前）</h4>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-1 pl-1">山田みきとしスタジアムMCの掛け声とともにスタメン発表。大声で応援歌を叫びましょう！</p>
+                </div>
+
+                <!-- 18:15 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-1.5 w-6 h-6 rounded-full bg-red-500 border-4 border-white flex items-center justify-center"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+                        <span class="text-sm font-black text-red-500 bg-red-50 px-2.5 py-1 rounded-md">18:15</span>
+                        <h4 class="font-bold text-red-600 text-sm sm:text-base">【プレイボール！】試合開始</h4>
+                    </div>
+                </div>
+
+                <!-- イニング間イベントまとめ -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-1.5 w-6 h-6 rounded-full bg-baystars-gold border-4 border-white flex items-center justify-center"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+                        <span class="text-sm font-black text-baystars-gold bg-yellow-50 px-2.5 py-1 rounded-md">イニング間</span>
+                        <h4 class="font-bold text-slate-800 text-sm sm:text-base">怒涛のグラウンドエンタメイベント！</h4>
+                    </div>
+                    
+                    <!-- イニングイベントリスト -->
+                    <div class="mt-4 space-y-3 bg-slate-50 p-4 rounded-2xl border border-slate-100 max-h-96 overflow-y-auto print-max-none">
+                        <div class="flex items-start gap-2.5 text-xs">
+                            <span class="bg-slate-200 text-slate-700 font-bold px-2 py-0.5 rounded shrink-0">1回表終了</span>
+                            <p class="text-slate-700"><strong>MAKE SOME NOISE!</strong> スタンドからの大声援でHAMASTA音量計をMAXに！</p>
+                        </div>
+                        <div class="flex items-start gap-2.5 text-xs">
+                            <span class="bg-slate-200 text-slate-700 font-bold px-2 py-0.5 rounded shrink-0">1回裏終了</span>
+                            <p class="text-slate-700"><strong>ヤスアキグローブプレゼント!</strong> 小学生以下限定！ヤスアキJUMPで直筆サイン入りグラブをゲット（抽選5名）</p>
+                        </div>
+                        <div class="flex items-start gap-2.5 text-xs">
+                            <span class="bg-slate-200 text-slate-700 font-bold px-2 py-0.5 rounded shrink-0">2回表終了</span>
+                            <p class="text-slate-700"><strong>鳩サブレー presents BAYスマイルショット!</strong> ビジョンに映れば総合サービスセンターで写真をプレゼント！</p>
+                        </div>
+                        <div class="flex items-start gap-2.5 text-xs">
+                            <span class="bg-slate-200 text-slate-700 font-bold px-2 py-0.5 rounded shrink-0">2回裏終了</span>
+                            <p class="text-slate-700"><strong>リアルフェイク ズッバーン！</strong> 3つのチャピーから本物を見抜くFC限定クイズ！どの試合でどのイベントが開催されるかお楽しみ！</p>
+                        </div>
+                        <div class="flex items-start gap-2.5 text-xs">
+                            <span class="bg-slate-200 text-slate-700 font-bold px-2 py-0.5 rounded shrink-0">3回裏終了</span>
+                            <p class="text-slate-700"><strong>ドリトス presents ギリギリ！ストップチャレンジ!</strong> 巨大バートに食べられないようバルーンを止めるギリギリのチキンレース！</p>
+                        </div>
+                        <div class="flex items-start gap-2.5 text-xs">
+                            <span class="bg-slate-200 text-slate-700 font-bold px-2 py-0.5 rounded shrink-0">4回裏終了</span>
+                            <p class="text-slate-700"><strong>Hisense ハマスタバトル!</strong> diana vs ファンクラブ会員チームのガチンコリレー対決！全力応援！</p>
+                        </div>
+                        <div class="flex items-start gap-2.5 text-xs">
+                            <span class="bg-slate-200 text-slate-700 font-bold px-2 py-0.5 rounded shrink-0">5回表終了</span>
+                            <p class="text-slate-700"><strong>SHOW THE BLUE.!</strong> ライトに75mの巨大ビッグフラッグ登場！「勇者の遺伝子」に合わせてタオルを掲げよう！</p>
+                        </div>
+                        <div class="flex items-start gap-2.5 text-xs">
+                            <span class="bg-slate-200 text-slate-700 font-bold px-2 py-0.5 rounded shrink-0">5回裏終了</span>
+                            <p class="text-slate-700"><strong>ダンスCONTEST!</strong> 「ハッピースター☆ダンス」でベストダンサーにアピール。豪華賞品あり！</p>
+                        </div>
+                        <div class="flex items-start gap-2.5 text-xs">
+                            <span class="bg-slate-200 text-slate-700 font-bold px-2 py-0.5 rounded shrink-0">6回表終了</span>
+                            <p class="text-slate-700"><strong>MAKE SOME NOISE!</strong> 試合後半へのボルテージをもう一度最大に！</p>
+                        </div>
+                        <div class="flex items-start gap-2.5 text-xs">
+                            <span class="bg-slate-200 text-slate-700 font-bold px-2 py-0.5 rounded shrink-0">7回表終了</span>
+                            <p class="text-slate-700"><strong>ラッキー7!</strong> スタージェットを打ち上げてハマスタを青一色に染め上げる瞬間！</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 試合終了 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-1.5 w-6 h-6 rounded-full bg-emerald-500 border-4 border-white flex items-center justify-center"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+                        <span class="text-sm font-black text-emerald-500 bg-emerald-50 px-2.5 py-1 rounded-md">試合終了</span>
+                        <h4 class="font-bold text-slate-800 text-sm sm:text-base">ヒーローインタビュー ＆ 勝利セレブレーション</h4>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-1 pl-1">
+                        ベイスターズが勝利すると、ヒーローからスタンドへの「サインボールプレゼント」投げ込みがあります！<br>
+                        さらに花火と光が競演する「VICTORY CELEBRATION」が開催。スマホライトを点灯して盛り上がりましょう！
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3ページ目：大注目選手比較 & ハマスタグルメ（改ページ調整） -->
+        <div class="print-card print-break-before bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
+            <h2 class="text-xl font-bold text-baystars-navy flex items-center gap-2 mb-6 pb-2 border-b border-slate-100">
+                <span>⚾</span> 本日のダブル大注目選手！【若きスラッガー対決】
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 度会隆輝 -->
+                <div class="border-2 border-blue-200 rounded-2xl overflow-hidden shadow-sm relative">
+                    <div class="bg-gradient-to-r from-baystars-navy to-baystars-blue text-white p-4">
+                        <span class="text-xs font-bold text-baystars-gold">YOKOHAMA DeNA BAYSTARS</span>
+                        <h3 class="text-xl font-black mt-1">度会 隆輝 (わてぃ)</h3>
+                        <p class="text-xs text-blue-100">外野手 / 右投左打 / 背番号 4</p>
+                    </div>
+                    <div class="p-4 space-y-3 text-sm">
+                        <!-- ドラッグ＆ドロップ / 画像選択可能な選手写真エリア -->
+                        <div class="relative w-full h-44 bg-slate-100 rounded-xl flex flex-col items-center justify-center border-2 border-dashed border-slate-300 overflow-hidden group">
+                            <!-- プレビュー表示用imgタグ -->
+                            <!-- ※HTMLを直接編集する場合は、下の src="" の中に画像パス（例：watarai.jpg）を直接記入してください -->
+                            <img id="preview-watarai" src="" class="hidden absolute inset-0 w-full h-full object-cover z-10">
+                            
+                            <!-- デフォルト表示 -->
+                            <div id="placeholder-watarai" class="text-center p-2 z-0 flex flex-col items-center">
+                                <span class="text-4xl mb-1">🐹わてぃ✨</span>
+                                <span class="text-xs text-slate-400 font-bold group-hover:text-slate-600 no-print">ここに選手写真を挿入</span>
+                            </div>
+                            
+                            <!-- 画像アップロード用の隠しinput -->
+                            <input type="file" id="input-watarai" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer z-20 no-print" onchange="previewImage(this, 'preview-watarai', 'placeholder-watarai')">
+                            
+                            <!-- 変更用ホバーオーバーレイ -->
+                            <div class="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] px-2 py-1 rounded-md z-30 opacity-0 group-hover:opacity-100 transition no-print pointer-events-none">
+                                📷 画像を変更
+                            </div>
+                        </div>
+                        
+                        <div class="border-t border-slate-100 pt-3 space-y-2">
+                            <p class="text-xs"><strong class="text-slate-500">特徴：</strong> 現在、打率・安打数ともにチーム内No.1を爆走する、最高にポジティブな安打製造機！</p>
+                            <p class="text-xs"><strong class="text-slate-500">座右の銘：</strong> 『一切すべて自分の心次第』</p>
+                            <div class="bg-blue-50 p-2.5 rounded-xl border border-blue-100/50 mt-2">
+                                <span class="text-[10px] font-bold text-blue-600 block mb-1">2026年シーズン主な成績</span>
+                                <div class="grid grid-cols-4 gap-1 text-center font-bold">
+                                    <div><div class="text-[10px] text-slate-500 font-normal">打率</div><div class="text-sm text-baystars-navy">.281</div></div>
+                                    <div><div class="text-[10px] text-slate-500 font-normal">安打</div><div class="text-sm text-baystars-navy">63</div></div>
+                                    <div><div class="text-[10px] text-slate-500 font-normal">本塁打</div><div class="text-sm text-baystars-navy">5</div></div>
+                                    <div><div class="text-[10px] text-slate-500 font-normal">打点</div><div class="text-sm text-baystars-navy">22</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 森下翔太 -->
+                <div class="border-2 border-yellow-300 rounded-2xl overflow-hidden shadow-sm">
+                    <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-900 p-4">
+                        <span class="text-xs font-bold text-black/60">HANSHIN TIGERS</span>
+                        <h3 class="text-xl font-black mt-1">森下 翔太 (もり/しょーた)</h3>
+                        <p class="text-xs text-slate-800">外野手 / 右投右打 / 背番号 1</p>
+                    </div>
+                    <div class="p-4 space-y-3 text-sm">
+                        <!-- ドラッグ＆ドロップ / 画像選択可能な選手写真エリア -->
+                        <div class="relative w-full h-44 bg-slate-100 rounded-xl flex flex-col items-center justify-center border-2 border-dashed border-slate-300 overflow-hidden group">
+                            <!-- プレビュー表示用imgタグ -->
+                            <!-- ※HTMLを直接編集する場合は、下の src="" の中に画像パス（例：morishita.jpg）を直接記入してください -->
+                            <img id="preview-morishita" src="" class="hidden absolute inset-0 w-full h-full object-cover z-10">
+                            
+                            <!-- デフォルト表示 -->
+                            <div id="placeholder-morishita" class="text-center p-2 z-0 flex flex-col items-center">
+                                <span class="text-4xl mb-1">🐯しょーた🔥</span>
+                                <span class="text-xs text-slate-400 font-bold group-hover:text-slate-600 no-print">ここに選手写真を挿入</span>
+                            </div>
+                            
+                            <!-- 画像アップロード用の隠しinput -->
+                            <input type="file" id="input-morishita" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer z-20 no-print" onchange="previewImage(this, 'preview-morishita', 'placeholder-morishita')">
+                            
+                            <!-- 変更用ホバーオーバーレイ -->
+                            <div class="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] px-2 py-1 rounded-md z-30 opacity-0 group-hover:opacity-100 transition no-print pointer-events-none">
+                                📷 画像を変更
+                            </div>
+                        </div>
+
+                        <div class="border-t border-slate-100 pt-3 space-y-2">
+                            <p class="text-xs"><strong class="text-slate-500">特徴：</strong> 勝負強さと抜群 of パンチ力を兼ね備え、日本一にも大貢献したタイガースが誇る若き主砲！</p>
+                            <p class="text-xs"><strong class="text-slate-500">座右の銘：</strong> 『継続は力なり』</p>
+                            <div class="bg-yellow-50 p-2.5 rounded-xl border border-yellow-100/50 mt-2">
+                                <span class="text-[10px] font-bold text-yellow-600 block mb-1">2026年シーズン主な成績</span>
+                                <div class="grid grid-cols-4 gap-1 text-center font-bold">
+                                    <div><div class="text-[10px] text-slate-500 font-normal">打率</div><div class="text-sm text-yellow-800">.295</div></div>
+                                    <div><div class="text-[10px] text-slate-500 font-normal">安打</div><div class="text-sm text-yellow-800">71</div></div>
+                                    <div><div class="text-[10px] text-slate-500 font-normal">本塁打</div><div class="text-sm text-yellow-800">15</div></div>
+                                    <div><div class="text-[10px] text-slate-500 font-normal">打点</div><div class="text-sm text-yellow-800">35</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ハマスタ最強グルメ -->
+        <div class="print-card bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 print-avoid-break">
+            <h2 class="text-xl font-bold text-baystars-navy flex items-center gap-2 mb-6 pb-2 border-b border-slate-100">
+                <span>🍔</span> ハマスタ最強グルメマップ＆おすすめメニュー
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <!-- みかん氷 -->
+                <div class="border border-slate-100 rounded-2xl p-4 bg-orange-50/50 hover:shadow-md transition">
+                    <span class="text-2xl">🍧</span>
+                    <div class="flex justify-between items-start mt-2">
+                        <h4 class="font-extrabold text-slate-800">みかん氷</h4>
+                        <span class="text-xs font-bold text-orange-600 bg-orange-100 px-2 py-0.5 rounded">600円</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">ハマスタ不動の王者。シャリシャリの氷に甘いシロップとみかんがどっさり！ナイターに最高！</p>
+                </div>
+
+                <!-- ベイカラ -->
+                <div class="border border-slate-100 rounded-2xl p-4 bg-yellow-50/40 hover:shadow-md transition">
+                    <span class="text-2xl">🍗</span>
+                    <div class="flex justify-between items-start mt-2">
+                        <h4 class="font-extrabold text-slate-800">ベイカラ</h4>
+                        <span class="text-xs font-bold text-yellow-700 bg-yellow-100 px-2 py-0.5 rounded">700円</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">外はカリッと中はジューシー。たっぷりとまぶされる「グラナパダーノチーズ」がビールに最適！</p>
+                </div>
+
+                <!-- ベイ餃子 -->
+                <div class="border border-slate-100 rounded-2xl p-4 bg-emerald-50/30 hover:shadow-md transition">
+                    <span class="text-2xl">🥟</span>
+                    <div class="flex justify-between items-start mt-2">
+                        <h4 class="font-extrabold text-slate-800">ベイ餃子</h4>
+                        <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">700円</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">中華街の老舗「江戸清」との共同開発。タレを付けなくても味が濃厚で美味いジャンボ餃子！</p>
+                </div>
+
+                <!-- 目玉チャーハン -->
+                <div class="border border-slate-100 rounded-2xl p-4 bg-slate-50 hover:shadow-md transition sm:col-span-1 md:col-span-1">
+                    <span class="text-2xl">🍳</span>
+                    <div class="flex justify-between items-start mt-2">
+                        <h4 class="font-extrabold text-slate-800">目玉チャーハン</h4>
+                        <span class="text-xs font-bold text-slate-700 bg-slate-200 px-2 py-0.5 rounded">1,230円</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">関係者食堂で選手に愛され続けた裏メニュー。２つの黄身をスプーンで崩しながら食べる幸せ！</p>
+                </div>
+
+                <!-- 青星寮カレー -->
+                <div class="border border-slate-100 rounded-2xl p-4 bg-red-50/30 hover:shadow-md transition sm:col-span-2 md:col-span-2">
+                    <span class="text-2xl">🍛</span>
+                    <div class="flex justify-between items-start mt-2">
+                        <h4 class="font-extrabold text-slate-800">青星寮カレー（レギュラー）</h4>
+                        <span class="text-xs font-bold text-red-700 bg-red-100 px-2 py-0.5 rounded">1,050円</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">若手選手が暮らす「青星寮」の伝統の味。現在はトマトの酸味が加わり、よりスパイシーに旨みマニア向けにパワーアップ中！</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4ページ目：マスコット＆便利アプリ（改ページ調整） -->
+        <div class="print-card print-break-before bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
+            <h2 class="text-xl font-bold text-baystars-navy flex items-center gap-2 mb-6 pb-2 border-b border-slate-100">
+                <span>🦊</span> 会えるマスコット紹介
+            </h2>
+            <p class="text-xs text-slate-500 mb-6 font-bold text-blue-600">お好きなイラストやマスコット写真を追加して、オリジナルのしおりが作れます！</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- スターマン ＆ キララ -->
+                <div class="border border-slate-100 rounded-2xl p-4 flex gap-4 bg-blue-50/20 group relative overflow-hidden">
+                    <!-- 画像アップロード対応の丸型アバター -->
+                    <div class="relative w-16 h-16 rounded-full bg-slate-200 shrink-0 flex items-center justify-center font-bold text-2xl border-2 border-dashed border-slate-300 overflow-hidden">
+                        <!-- ※HTML直接編集用：src="starman.jpg" のように書き換え可能 -->
+                        <img id="preview-mascot-sk" src="" class="hidden absolute inset-0 w-full h-full object-cover rounded-full z-10">
+                        <span id="placeholder-mascot-sk" class="z-0">🐹</span>
+                        <input type="file" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer z-20 no-print" onchange="previewImage(this, 'preview-mascot-sk', 'placeholder-mascot-sk')">
+                        <!-- ホバーオーバーレイ -->
+                        <div class="absolute inset-0 bg-black/40 text-[8px] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition no-print pointer-events-none z-30">
+                            📷
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-extrabold text-baystars-navy">DB.スターマン & DB.キララ</h3>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                            星形の顔が可愛いスターマン（食いしん坊でおちゃめ）と、キラキラしたdianaに憧れてキレキレダンスを踊るキララ。スターマンからの淡い熱烈アプローチを、キララがさらりとかわす日常劇にも大注目！
+                        </p>
+                    </div>
+                </div>
+
+                <!-- バート ＆ チャピー -->
+                <div class="border border-slate-100 rounded-2xl p-4 flex gap-4 bg-slate-50 group relative overflow-hidden">
+                    <!-- 画像アップロード対応の丸型アバター -->
+                    <div class="relative w-16 h-16 rounded-full bg-slate-200 shrink-0 flex items-center justify-center font-bold text-2xl border-2 border-dashed border-slate-300 overflow-hidden">
+                        <!-- ※HTML直接編集用：src="bart.jpg" のように書き換え可能 -->
+                        <img id="preview-mascot-bc" src="kirara2025.jpg" class="hidden absolute inset-0 w-full h-full object-cover rounded-full z-10">
+                        <span id="placeholder-mascot-bc" class="z-0">👽</span>
+                        <input type="file" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer z-20 no-print" onchange="previewImage(this, 'preview-mascot-bc', 'placeholder-mascot-bc')">
+                        <!-- ホバーオーバーレイ -->
+                        <div class="absolute inset-0 bg-black/40 text-[8px] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition no-print pointer-events-none z-30">
+                            📷
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-extrabold text-slate-800">バート ＆ チャピー</h3>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                            横浜の街にひょっこり住みついた不思議モンスターコンビ。自由気ままでマイペースな白いバートと、やんちゃでいたずら大好きな黄色いチャピー。２回裏、３回裏イベントではハチャメチャに大暴れします！
+                        </p>
+                    </div>
+                </div>
+
+                <!-- トラッキー -->
+                <div class="border border-yellow-200 rounded-2xl p-4 flex gap-4 bg-yellow-50/50 md:col-span-2 group relative overflow-hidden">
+                    <!-- 画像アップロード対応の丸型アバター -->
+                    <div class="relative w-16 h-16 rounded-full bg-slate-200 shrink-0 flex items-center justify-center font-bold text-2xl border-2 border-dashed border-slate-300 overflow-hidden">
+                        <!-- ※HTML直接編集用：src="tolucky.jpg" のように書き換え可能 -->
+                        <img id="preview-mascot-to" src="" class="hidden absolute inset-0 w-full h-full object-cover rounded-full z-10">
+                        <span id="placeholder-mascot-to" class="z-0">🐯</span>
+                        <input type="file" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer z-20 no-print" onchange="previewImage(this, 'preview-mascot-to', 'placeholder-mascot-to')">
+                        <!-- ホバーオーバーレイ -->
+                        <div class="absolute inset-0 bg-black/40 text-[8px] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition no-print pointer-events-none z-30">
+                            📷
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-extrabold text-yellow-800 flex items-center gap-1.5">
+                            トラッキー（スペシャルゲスト）
+                            <span class="text-[10px] bg-yellow-600 text-white font-bold px-2 py-0.5 rounded-full uppercase">Guest</span>
+                        </h3>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                            阪神タイガースの頼れるマスコットが、交流イベントのため特別参戦！19日、20日はスターマンやキララたちと一緒に、場外イベントやグラウンドを最高に盛り上げます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- アプリ紹介 -->
+        <div class="print-card bg-gradient-to-r from-baystars-navy to-blue-900 text-white rounded-3xl shadow-xl p-6 sm:p-8 relative overflow-hidden print-avoid-break">
+            <div class="absolute right-0 bottom-0 opacity-10 transform translate-y-6 translate-x-6">
+                <svg width="200" height="200" fill="white" viewBox="0 0 24 24">
+                    <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+                </svg>
+            </div>
+            
+            <div class="relative z-10">
+                <div class="flex items-center gap-3">
+                    <div class="bg-white text-baystars-navy w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-xl shadow-md shrink-0">📱</div>
+                    <div>
+                        <span class="text-xs text-baystars-gold font-bold block tracking-widest uppercase">STADIUM APP</span>
+                        <h3 class="text-lg font-black text-white">BAYSTARS STAR GUIDE (スターガイド)</h3>
+                    </div>
+                </div>
+
+                <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="bg-white/10 p-3 rounded-xl border border-white/10">
+                        <span class="text-sm font-bold text-baystars-gold block mb-1">📍 座席ナビゲート</span>
+                        <p class="text-xs text-blue-100">今日座る「1GATE 2通路 Sec.B319a 22段付近」まで、GPSと連動したスタジアムマップで最短誘導！</p>
+                    </div>
+                    <div class="bg-white/10 p-3 rounded-xl border border-white/10">
+                        <span class="text-sm font-bold text-baystars-gold block mb-1">🍔 モバイルオーダー</span>
+                        <p class="text-xs text-blue-100">「みかん氷」や「ベイカラ」も並ばずに席から事前注文！完成したら受け取り口へGO。</p>
+                    </div>
+                    <div class="bg-white/10 p-3 rounded-xl border border-white/10">
+                        <span class="text-sm font-bold text-baystars-gold block mb-1">✨ ライブ連動ライト</span>
+                        <p class="text-xs text-blue-100">「VICTORY CELEBRATION」中にスマホのライトと連動！スタジアム全体できらめく光 of ウェーブを創ろう！</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <p class="text-xs text-blue-200">※出発前にApp Storeからあらかじめダウンロードしておくのがスムーズです！</p>
+                    <a href="https://apps.apple.com/jp/app/baystars-star-guide/id6736634147" target="_blank" class="no-print bg-white text-baystars-navy font-black text-sm px-6 py-2.5 rounded-full hover:bg-blue-50 transition shadow-lg text-center w-full sm:w-auto">
+                        App Store でダウンロード
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- フッター -->
+        <div class="text-center mt-12 no-print">
+            <p class="text-xs text-slate-400">Copyright © YOKOHAMA DeNA BAYSTARS All Rights Reserved.</p>
+            <p class="text-[10px] text-slate-300 mt-1">This pamphlet is formatted for A4 PDF / Print.</p>
+        </div>
+
+    </div>
+
+    <!-- SVGアロー定義（簡易ハマスタマップ用） -->
+    <svg width="0" height="0" class="absolute">
+        <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444"/>
+            </marker>
+        </defs>
+    </svg>
+
+    <!-- JavaScript：ローカルの画像選択時にリアルタイムでプレビューを表示する処理 -->
+    <script>
+        function previewImage(input, previewId, placeholderId) {
+            const file = input.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.getElementById(previewId);
+                    const placeholder = document.getElementById(placeholderId);
+                    
+                    img.src = e.target.result;
+                    img.classList.remove('hidden');
+                    
+                    // プレースホルダー（絵文字など）を非表示にする
+                    if (placeholder) {
+                        placeholder.classList.add('hidden');
+                    }
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+</body>
+</html>
