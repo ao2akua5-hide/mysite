@@ -148,9 +148,9 @@
                             </div>
                             
                             <!-- ハマスタ座席マップ / 写真表示エリア（imagesからimegeに変更） -->
-                            <div class="w-full h-44 bg-slate-100 rounded-xl border border-blue-100 overflow-hidden relative group flex flex-col items-center justify-center">
+                            <div class="w-full h-44 bg-white rounded-xl border border-blue-100 overflow-hidden relative group flex flex-col items-center justify-center">
                                 <img id="preview-map" src="imege/img.PNG" alt="スタジアムマップ / 座席ビュー" 
-                                     class="w-full h-full object-cover z-10"
+                                     class="w-full h-full object-contain z-10"
                                      onerror="handleImageError(this, 'placeholder-map')">
                                 
                                 <div id="placeholder-map" class="hidden text-center p-2 z-0 flex flex-col items-center justify-center w-full h-full bg-blue-50/30">
@@ -209,7 +209,7 @@
                         <div>
                             <span class="font-bold text-slate-800 text-sm">スマホ</span>
                             <p class="text-xs text-slate-500 mt-0.5">
-                                球場内は完全キャッシュレス（<a href="https://www.baystars.co.jp/cashless/" target="_blank" class="text-blue-600 hover:underline font-bold">利用できるキャッシュレス</a>）
+                                球場内は完全キャッシュレス<br class="no-print">（<a href="https://www.baystars.co.jp/cashless/" target="_blank" class="text-blue-600 hover:underline font-bold">利用できるキャッシュレス</a>）
                             </p>
                         </div>
                     </label>
