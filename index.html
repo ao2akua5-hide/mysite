@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 検索避け設定：一般の検索エンジンにページがインデックスされるのを防ぎます -->
     <meta name="robots" content="noindex, nofollow">
     <title>横浜DeNAベイスターズ 観戦のしおり</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -70,7 +71,7 @@
         <div class="max-w-4xl mx-auto flex justify-between items-center">
             <span class="text-sm font-bold flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                Web & PDF印刷対応ガイド
+                Web & PDF印刷対応ガイド（非公開・非公式）
             </span>
             <button onclick="window.print()" class="bg-gradient-to-r from-baystars-gold to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-white font-bold text-sm py-2 px-5 rounded-full shadow-lg transition transform hover:scale-105 flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -146,8 +147,21 @@
                                 </p>
                             </div>
                             
-                            <div class="w-full h-44 bg-slate-100 rounded-xl border border-blue-100 overflow-hidden relative">
-                                <img src="image/img.PNG" alt="スタジアムマップ / 座席ビュー" class="w-full h-full object-cover">
+                            <!-- ハマスタ座席マップ / 写真表示エリア（imagesからimegeに変更） -->
+                            <div class="w-full h-44 bg-slate-100 rounded-xl border border-blue-100 overflow-hidden relative group flex flex-col items-center justify-center">
+                                <img id="preview-map" src="imege/img.PNG" alt="スタジアムマップ / 座席ビュー" 
+                                     class="w-full h-full object-cover z-10"
+                                     onerror="handleImageError(this, 'placeholder-map')">
+                                
+                                <div id="placeholder-map" class="hidden text-center p-2 z-0 flex flex-col items-center justify-center w-full h-full bg-blue-50/30">
+                                    <span class="text-3xl mb-1">📍</span>
+                                    <div class="no-print mt-1">
+                                        <label class="bg-blue-600 text-white text-[11px] font-bold px-3 py-1.5 rounded-full cursor-pointer hover:bg-blue-700 transition shadow-sm inline-block">
+                                            📷 マップ / 写真を選択
+                                            <input type="file" accept="image/*" class="hidden" onchange="previewImage(this, 'preview-map', 'placeholder-map')">
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -269,7 +283,7 @@
                     <span class="absolute -left-10 top-1.5 w-6 h-6 rounded-full bg-baystars-gold border-4 border-white flex items-center justify-center"></span>
                     <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
                         <span class="text-sm font-black text-baystars-gold bg-yellow-50 px-2.5 py-1 rounded-md">イニング間</span>
-                        <h4 class="font-bold text-slate-800 text-sm sm:text-base">怒涛のグラウンドエンタメイベント！</h4>
+                        <h4 class="font-bold text-slate-800 text-sm sm:text-base">怒涛之グラウンドエンタメイベント！</h4>
                     </div>
                     
                     <div class="mt-4 space-y-3 bg-slate-50 p-4 rounded-2xl border border-slate-100 max-h-96 overflow-y-auto print-max-none">
@@ -336,6 +350,7 @@
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 度会隆輝 -->
                 <div class="border-2 border-blue-200 rounded-2xl overflow-hidden shadow-sm relative">
                     <div class="bg-gradient-to-r from-baystars-navy to-baystars-blue text-white p-4">
                         <span class="text-xs font-bold text-baystars-gold">YOKOHAMA DeNA BAYSTARS</span>
@@ -344,10 +359,19 @@
                     </div>
                     <div class="p-4 space-y-3 text-sm">
                         <div class="relative w-full h-44 bg-slate-100 rounded-xl flex flex-col items-center justify-center border-2 border-dashed border-slate-300 overflow-hidden group">
-                            <img id="preview-watarai" src="image/watarai.png" class="absolute inset-0 w-full h-full object-cover z-10">
-                            <div id="placeholder-watarai" class="hidden text-center p-2 z-0 flex flex-col items-center">
+                            <!-- 初期表示：imege/watarai.png に統一 -->
+                            <img id="preview-watarai" src="imege/watarai.png" 
+                                 class="absolute inset-0 w-full h-full object-cover z-10"
+                                 onerror="handleImageError(this, 'placeholder-watarai')">
+                            
+                            <div id="placeholder-watarai" class="hidden text-center p-2 z-0 flex flex-col items-center justify-center w-full h-full bg-slate-50">
                                 <span class="text-4xl mb-1">🐹わてぃ✨</span>
-                                <span class="text-xs text-slate-400 font-bold group-hover:text-slate-600 no-print">ここに選手写真を挿入</span>
+                                <div class="no-print mt-1">
+                                    <label class="bg-baystars-blue text-white text-[11px] font-bold px-3 py-1.5 rounded-full cursor-pointer hover:bg-baystars-navy transition shadow-sm inline-block">
+                                        📷 写真を選択
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewImage(this, 'preview-watarai', 'placeholder-watarai')">
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         
@@ -367,6 +391,7 @@
                     </div>
                 </div>
 
+                <!-- 森下翔太 -->
                 <div class="border-2 border-yellow-300 rounded-2xl overflow-hidden shadow-sm">
                     <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-900 p-4">
                         <span class="text-xs font-bold text-black/60">HANSHIN TIGERS</span>
@@ -375,10 +400,19 @@
                     </div>
                     <div class="p-4 space-y-3 text-sm">
                         <div class="relative w-full h-44 bg-slate-100 rounded-xl flex flex-col items-center justify-center border-2 border-dashed border-slate-300 overflow-hidden group">
-                            <img id="preview-morishita" src="image/morisita.jpeg" class="absolute inset-0 w-full h-full object-cover z-10">
-                            <div id="placeholder-morishita" class="hidden text-center p-2 z-0 flex flex-col items-center">
+                            <!-- 初期表示：imege/morisita.jpeg に統一 -->
+                            <img id="preview-morishita" src="imege/morisita.jpeg" 
+                                 class="absolute inset-0 w-full h-full object-cover z-10"
+                                 onerror="handleImageError(this, 'placeholder-morishita')">
+                            
+                            <div id="placeholder-morishita" class="hidden text-center p-2 z-0 flex flex-col items-center justify-center w-full h-full bg-slate-50">
                                 <span class="text-4xl mb-1">🐯しょーた🔥</span>
-                                <span class="text-xs text-slate-400 font-bold group-hover:text-slate-600 no-print">ここに選手写真を挿入</span>
+                                <div class="no-print mt-1">
+                                    <label class="bg-yellow-600 text-white text-[11px] font-bold px-3 py-1.5 rounded-full cursor-pointer hover:bg-yellow-700 transition shadow-sm inline-block">
+                                        📷 写真を選択
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewImage(this, 'preview-morishita', 'placeholder-morishita')">
+                                    </label>
+                                </div>
                             </div>
                         </div>
 
@@ -462,10 +496,21 @@
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- スターマン -->
                 <div class="border border-slate-100 rounded-2xl p-4 flex gap-4 bg-blue-50/20 group relative overflow-hidden">
                     <div class="relative w-16 h-16 rounded-full bg-slate-200 shrink-0 flex items-center justify-center font-bold text-2xl border-2 border-dashed border-slate-300 overflow-hidden">
-                        <img id="preview-mascot-sk" src="image/suta.jpg" class="absolute inset-0 w-full h-full object-cover rounded-full z-10">
-                        <span id="placeholder-mascot-sk" class="hidden z-0">🐹</span>
+                        <!-- 初期表示：imege/suta.jpg に統一 -->
+                        <img id="preview-mascot-sk" src="imege/suta.jpg" 
+                             class="absolute inset-0 w-full h-full object-cover rounded-full z-10"
+                             onerror="handleImageError(this, 'placeholder-mascot-sk')">
+                        
+                        <div id="placeholder-mascot-sk" class="hidden absolute inset-0 z-0 flex items-center justify-center bg-slate-50 w-full h-full">
+                            <label class="cursor-pointer w-full h-full flex flex-col items-center justify-center">
+                                <span class="text-xl">🐹</span>
+                                <span class="text-[8px] text-slate-400 no-print leading-none mt-0.5 scale-90">選択</span>
+                                <input type="file" accept="image/*" class="hidden" onchange="previewImage(this, 'preview-mascot-sk', 'placeholder-mascot-sk')">
+                            </label>
+                        </div>
                     </div>
                     <div>
                         <h3 class="font-extrabold text-baystars-navy">DB.スターマン & DB.キララ</h3>
@@ -475,10 +520,21 @@
                     </div>
                 </div>
 
+                <!-- バート＆チャピー -->
                 <div class="border border-slate-100 rounded-2xl p-4 flex gap-4 bg-slate-50 group relative overflow-hidden">
                     <div class="relative w-16 h-16 rounded-full bg-slate-200 shrink-0 flex items-center justify-center font-bold text-2xl border-2 border-dashed border-slate-300 overflow-hidden">
-                        <img id="preview-mascot-bc" src="image/c&b.jpg" class="absolute inset-0 w-full h-full object-cover rounded-full z-10">
-                        <span id="placeholder-mascot-bc" class="hidden z-0">👽</span>
+                        <!-- 初期表示：imege/c&b.jpg に統一 -->
+                        <img id="preview-mascot-bc" src="imege/c&b.jpg" 
+                             class="absolute inset-0 w-full h-full object-cover rounded-full z-10"
+                             onerror="handleImageError(this, 'placeholder-mascot-bc')">
+                        
+                        <div id="placeholder-mascot-bc" class="hidden absolute inset-0 z-0 flex items-center justify-center bg-slate-50 w-full h-full">
+                            <label class="cursor-pointer w-full h-full flex flex-col items-center justify-center">
+                                <span class="text-xl">👽</span>
+                                <span class="text-[8px] text-slate-400 no-print leading-none mt-0.5 scale-90">選択</span>
+                                <input type="file" accept="image/*" class="hidden" onchange="previewImage(this, 'preview-mascot-bc', 'placeholder-mascot-bc')">
+                            </label>
+                        </div>
                     </div>
                     <div>
                         <h3 class="font-extrabold text-slate-800">バート ＆ チャピー</h3>
@@ -488,10 +544,21 @@
                     </div>
                 </div>
 
+                <!-- トラッキー -->
                 <div class="border border-yellow-200 rounded-2xl p-4 flex gap-4 bg-yellow-50/50 md:col-span-2 group relative overflow-hidden">
                     <div class="relative w-16 h-16 rounded-full bg-slate-200 shrink-0 flex items-center justify-center font-bold text-2xl border-2 border-dashed border-slate-300 overflow-hidden">
-                        <img id="preview-mascot-to" src="image/tora.png" class="absolute inset-0 w-full h-full object-cover rounded-full z-10">
-                        <span id="placeholder-mascot-to" class="hidden z-0">🐯</span>
+                        <!-- 初期表示：imege/tora.png に統一 -->
+                        <img id="preview-mascot-to" src="imege/tora.png" 
+                             class="absolute inset-0 w-full h-full object-cover rounded-full z-10"
+                             onerror="handleImageError(this, 'placeholder-mascot-to')">
+                        
+                        <div id="placeholder-mascot-to" class="hidden absolute inset-0 z-0 flex items-center justify-center bg-slate-50 w-full h-full">
+                            <label class="cursor-pointer w-full h-full flex flex-col items-center justify-center">
+                                <span class="text-xl">🐯</span>
+                                <span class="text-[8px] text-slate-400 no-print leading-none mt-0.5 scale-90">選択</span>
+                                <input type="file" accept="image/*" class="hidden" onchange="previewImage(this, 'preview-mascot-to', 'placeholder-mascot-to')">
+                            </label>
+                        </div>
                     </div>
                     <div>
                         <h3 class="font-extrabold text-yellow-800 flex items-center gap-1.5">
@@ -516,6 +583,38 @@
         </div>
 
     </div>
+
+    <!-- JavaScript：ハイブリッド自動プレビュー切り替え処理 -->
+    <script>
+        // 画像読み込みエラーが起きた場合、自動的にファイル選択ができるプレースホルダーを表示する処理
+        function handleImageError(imgElement, placeholderId) {
+            imgElement.classList.add('hidden'); // 画像タグを非表示に
+            const placeholder = document.getElementById(placeholderId);
+            if (placeholder) {
+                placeholder.classList.remove('hidden'); // プレースホルダーを画面上に呼び出し
+            }
+        }
+
+        // ファイル選択ダイアログで画像が指定された場合の処理
+        function previewImage(input, previewId, placeholderId) {
+            const file = input.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.getElementById(previewId);
+                    const placeholder = document.getElementById(placeholderId);
+                    
+                    img.src = e.target.result;
+                    img.classList.remove('hidden');
+                    
+                    if (placeholder) {
+                        placeholder.classList.add('hidden');
+                    }
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
 
 </body>
 </html>
