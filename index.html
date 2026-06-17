@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>横浜DeNAベイスターズ 観戦のしおり</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -66,7 +65,6 @@
 </head>
 <body class="text-slate-800 antialiased min-h-screen pb-12">
 
-    <!-- 印刷用・操作用ヘッダー（Web表示時のみ） -->
     <div class="no-print bg-baystars-dark text-white py-3 px-4 sticky top-0 z-50 shadow-md">
         <div class="max-w-4xl mx-auto flex justify-between items-center">
             <span class="text-sm font-bold flex items-center gap-2">
@@ -82,14 +80,10 @@
         </div>
     </div>
 
-    <!-- メインコンテナ -->
     <div class="max-w-4xl mx-auto px-4 sm:px-6 mt-6">
 
-        <!-- 1ページ目：カバー＆基本情報 -->
         <div class="print-card bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 mb-8">
-            <!-- ヒーローヘッダー -->
             <div class="print-bg-blue bg-gradient-to-br from-baystars-dark via-baystars-navy to-baystars-blue text-white p-8 relative overflow-hidden text-center sm:text-left">
-                <!-- 装飾用スタジアム風サークル（背景） -->
                 <div class="absolute right-0 bottom-0 opacity-10 transform translate-x-20 translate-y-20 no-print">
                     <svg width="400" height="400" viewBox="0 0 100 100">
                         <circle cx="50" cy="50" r="48" stroke="white" stroke-width="2" fill="none"/>
@@ -116,13 +110,11 @@
             </div>
 
             <div class="p-6 sm:p-8 space-y-8">
-                <!-- 基本情報グリッド -->
                 <div>
                     <h2 class="text-xl font-bold text-baystars-navy flex items-center gap-2 mb-4 pb-2 border-b border-slate-100">
                         <span class="text-baystars-gold">📌</span> 試合・イベント・座席基本情報
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <!-- 情報リスト -->
                         <div class="space-y-3">
                             <div class="flex items-center justify-between p-3 print-bg-light bg-slate-50 rounded-xl border border-slate-100">
                                 <span class="text-sm text-slate-500 font-bold">日時</span>
@@ -144,7 +136,6 @@
                             </div>
                         </div>
 
-                        <!-- 座席情報 ＆ ハマスタマップ -->
                         <div class="flex flex-col justify-between p-4 bg-blue-50/50 border border-blue-100 rounded-2xl relative overflow-hidden">
                             <div class="mb-3">
                                 <span class="text-xs text-blue-600 font-extrabold tracking-wider block uppercase">MY SEAT LOCATION</span>
@@ -153,38 +144,15 @@
                                     <span class="animate-bounce">👈</span>
                                 </p>
                             </div>
-                            <!-- ハマスタ簡易マップ (SVG) -->
-                            <div class="w-full h-44 bg-white rounded-xl border border-blue-100 shadow-inner flex items-center justify-center p-2">
-                                <svg viewBox="0 0 200 180" class="w-full h-full">
-                                    <!-- グラウンド（内野・外野） -->
-                                    <path d="M 100 130 L 40 70 A 80 80 0 0 1 160 70 Z" fill="#2e7d32" opacity="0.8"/>
-                                    <!-- 内野土部分 -->
-                                    <path d="M 100 130 L 60 90 A 50 50 0 0 1 140 90 Z" fill="#8d6e63"/>
-                                    <!-- ダイヤモンドベースライン -->
-                                    <rect x="85" y="85" width="30" height="30" fill="none" stroke="white" stroke-width="1.5" transform="rotate(45 100 100)"/>
-                                    <circle cx="100" cy="130" r="3" fill="white"/> <!-- 本塁 -->
-                                    <!-- スタンド外周（ハマスタの形） -->
-                                    <path d="M 100 160 C 20 160, 10 70, 100 10 C 190 70, 180 160, 100 160 Z" fill="none" stroke="#94a3b8" stroke-width="4"/>
-                                    <!-- 1塁側・ライト側スタンドエリア -->
-                                    <path d="M 100 160 C 150 160, 175 120, 160 70" fill="none" stroke="#cbd5e1" stroke-width="12" stroke-linecap="round"/>
-                                    <!-- マイシートのプロット -->
-                                    <path d="M 155 105 C 160 95, 162 85, 158 75" fill="none" stroke="#ef4444" stroke-width="16" stroke-linecap="round" opacity="0.3" class="animate-pulse"/>
-                                    <circle cx="158" cy="90" r="6" fill="#ef4444" stroke="white" stroke-width="2"/>
-                                    <!-- テキスト表示 -->
-                                    <text x="100" y="152" font-size="8" font-weight="bold" fill="#475569" text-anchor="middle">バックネット裏</text>
-                                    <text x="35" y="80" font-size="8" fill="#64748b" text-anchor="middle">3塁側(阪神)</text>
-                                    <text x="165" y="60" font-size="8" font-weight="bold" fill="#005A9C" text-anchor="middle">ライトスタンド</text>
-                                    <text x="145" y="115" font-size="7" font-weight="bold" fill="#ef4444">マイシートはココ！</text>
-                                    <path d="M 152 110 L 157 98" fill="none" stroke="#ef4444" stroke-width="1" marker-end="url(#arrow)"/>
-                                </svg>
+                            
+                            <div class="w-full h-44 bg-slate-100 rounded-xl border border-blue-100 overflow-hidden relative">
+                                <img src="images/map.jpg" alt="スタジアムマップ / 座席ビュー" class="w-full h-full object-cover">
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- スペシャル特典 -->
                 <div class="p-6 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-2xl relative overflow-hidden print-avoid-break">
-                    <!-- アクセントリボン -->
                     <div class="absolute -right-8 -top-8 bg-emerald-500 text-white text-xs font-black py-4 px-10 transform rotate-45 shadow-sm no-print">
                         GIFT
                     </div>
@@ -214,20 +182,20 @@
             </div>
         </div>
 
-        <!-- 持ち物チェックリスト（1ページ目下部または2ページ目） -->
         <div class="print-card bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 print-avoid-break">
             <h2 class="text-xl font-bold text-baystars-navy flex items-center gap-2 mb-2 pb-2 border-b border-slate-100">
                 <span>🎒</span> 持ち物チェックリスト
             </h2>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <!-- リストA -->
                 <div class="space-y-3">
                     <label class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer transition border border-slate-100">
                         <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-baystars-blue focus:ring-baystars-blue mt-0.5 accent-blue-600">
                         <div>
                             <span class="font-bold text-slate-800 text-sm">スマホ</span>
-                            <p class="text-xs text-slate-500 mt-0.5">球場内は完全キャッシュレス</p>
+                            <p class="text-xs text-slate-500 mt-0.5">
+                                球場内は完全キャッシュレス（<a href="https://www.baystars.co.jp/cashless/" target="_blank" class="text-blue-600 hover:underline font-bold">利用できるキャッシュレス</a>）
+                            </p>
                         </div>
                     </label>
                     <label class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer transition border border-slate-100">
@@ -245,7 +213,6 @@
                         </div>
                     </label>
                 </div>
-                <!-- リストB -->
                 <div class="space-y-3">
                     <label class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer transition border border-slate-100">
                         <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-baystars-blue focus:ring-baystars-blue mt-0.5 accent-blue-600">
@@ -265,15 +232,12 @@
             </div>
         </div>
 
-        <!-- 2ページ目：タイムスケジュール（改ページ調整） -->
         <div class="print-card print-break-before bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
             <h2 class="text-xl font-bold text-baystars-navy flex items-center gap-2 mb-6 pb-2 border-b border-slate-100">
                 <span>⏱️</span> 当日タイムスケジュール
             </h2>
 
-            <!-- タイムライン縦ライン -->
             <div class="relative border-l-2 border-blue-100 ml-4 pl-6 space-y-6">
-                <!-- 16:15 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-1.5 w-6 h-6 rounded-full bg-baystars-navy border-4 border-white flex items-center justify-center"></span>
                     <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
@@ -283,7 +247,6 @@
                     <p class="text-xs text-slate-500 mt-1 pl-1">早めに入場してUmiosゼリーをGETし、ハマスタ名物グルメを買い出しにいきましょう。</p>
                 </div>
 
-                <!-- 17:55 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-1.5 w-6 h-6 rounded-full bg-baystars-blue border-4 border-white flex items-center justify-center"></span>
                     <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
@@ -293,7 +256,6 @@
                     <p class="text-xs text-slate-500 mt-1 pl-1">山田みきとしスタジアムMCの掛け声とともにスタメン発表。大声で応援歌を叫びましょう！</p>
                 </div>
 
-                <!-- 18:15 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-1.5 w-6 h-6 rounded-full bg-red-500 border-4 border-white flex items-center justify-center"></span>
                     <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
@@ -302,7 +264,6 @@
                     </div>
                 </div>
 
-                <!-- イニング間イベントまとめ -->
                 <div class="relative">
                     <span class="absolute -left-10 top-1.5 w-6 h-6 rounded-full bg-baystars-gold border-4 border-white flex items-center justify-center"></span>
                     <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
@@ -310,7 +271,6 @@
                         <h4 class="font-bold text-slate-800 text-sm sm:text-base">怒涛のグラウンドエンタメイベント！</h4>
                     </div>
                     
-                    <!-- イニングイベントリスト -->
                     <div class="mt-4 space-y-3 bg-slate-50 p-4 rounded-2xl border border-slate-100 max-h-96 overflow-y-auto print-max-none">
                         <div class="flex items-start gap-2.5 text-xs">
                             <span class="bg-slate-200 text-slate-700 font-bold px-2 py-0.5 rounded shrink-0">1回表終了</span>
@@ -355,7 +315,6 @@
                     </div>
                 </div>
 
-                <!-- 試合終了 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-1.5 w-6 h-6 rounded-full bg-emerald-500 border-4 border-white flex items-center justify-center"></span>
                     <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
@@ -370,14 +329,12 @@
             </div>
         </div>
 
-        <!-- 3ページ目：大注目選手比較 & ハマスタグルメ（改ページ調整） -->
         <div class="print-card print-break-before bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
             <h2 class="text-xl font-bold text-baystars-navy flex items-center gap-2 mb-6 pb-2 border-b border-slate-100">
                 <span>⚾</span> 両チームの注目選手！
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- 度会隆輝 -->
                 <div class="border-2 border-blue-200 rounded-2xl overflow-hidden shadow-sm relative">
                     <div class="bg-gradient-to-r from-baystars-navy to-baystars-blue text-white p-4">
                         <span class="text-xs font-bold text-baystars-gold">YOKOHAMA DeNA BAYSTARS</span>
@@ -385,18 +342,12 @@
                         <p class="text-xs text-blue-100">外野手 / 右投左打 / 背番号 4</p>
                     </div>
                     <div class="p-4 space-y-3 text-sm">
-                        <!-- ドラッグ＆ドロップ / 画像選択可能な選手写真エリア -->
                         <div class="relative w-full h-44 bg-slate-100 rounded-xl flex flex-col items-center justify-center border-2 border-dashed border-slate-300 overflow-hidden group">
-                            <!-- プレビュー表示用imgタグ -->
-                            <!-- ※HTMLを直接編集する場合は、下の src="" の中に画像パス（例：watarai.jpg）を直接記入してください -->
-                            <img id="preview-watarai" src="imege/watarai.png" class="absolute inset-0 w-full h-full object-cover z-10">
-                            
-                            <!-- デフォルト表示 -->
+                            <img id="preview-watarai" src="images/watarai.png" class="absolute inset-0 w-full h-full object-cover z-10">
                             <div id="placeholder-watarai" class="hidden text-center p-2 z-0 flex flex-col items-center">
                                 <span class="text-4xl mb-1">🐹わてぃ✨</span>
                                 <span class="text-xs text-slate-400 font-bold group-hover:text-slate-600 no-print">ここに選手写真を挿入</span>
                             </div>
-                            
                         </div>
                         
                         <div class="border-t border-slate-100 pt-3 space-y-2">
@@ -415,7 +366,6 @@
                     </div>
                 </div>
 
-                <!-- 森下翔太 -->
                 <div class="border-2 border-yellow-300 rounded-2xl overflow-hidden shadow-sm">
                     <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-900 p-4">
                         <span class="text-xs font-bold text-black/60">HANSHIN TIGERS</span>
@@ -423,18 +373,12 @@
                         <p class="text-xs text-slate-800">外野手 / 右投右打 / 背番号 1</p>
                     </div>
                     <div class="p-4 space-y-3 text-sm">
-                        <!-- ドラッグ＆ドロップ / 画像選択可能な選手写真エリア -->
                         <div class="relative w-full h-44 bg-slate-100 rounded-xl flex flex-col items-center justify-center border-2 border-dashed border-slate-300 overflow-hidden group">
-                            <!-- プレビュー表示用imgタグ -->
-                            <!-- ※HTMLを直接編集する場合は、下の src="" の中に画像パス（例：morishita.jpg）を直接記入してください -->
-                            <img id="preview-morishita" src="imege/morisita.jpeg" class="absolute inset-0 w-full h-full object-cover z-10">
-                            
-                            <!-- デフォルト表示 -->
+                            <img id="preview-morishita" src="images/morisita.jpeg" class="absolute inset-0 w-full h-full object-cover z-10">
                             <div id="placeholder-morishita" class="hidden text-center p-2 z-0 flex flex-col items-center">
                                 <span class="text-4xl mb-1">🐯しょーた🔥</span>
                                 <span class="text-xs text-slate-400 font-bold group-hover:text-slate-600 no-print">ここに選手写真を挿入</span>
                             </div>
-                            
                         </div>
 
                         <div class="border-t border-slate-100 pt-3 space-y-2">
@@ -455,24 +399,24 @@
             </div>
         </div>
 
-        <!-- ハマスタ最強グルメ -->
         <div class="print-card bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 print-avoid-break">
-            <h2 class="text-xl font-bold text-baystars-navy flex items-center gap-2 mb-6 pb-2 border-b border-slate-100">
-                <span>🍔</span> ハマスタおすすめグルメ
+            <h2 class="text-xl font-bold text-baystars-navy flex items-center justify-between gap-2 mb-6 pb-2 border-b border-slate-100">
+                <span class="flex items-center gap-2"><span>🍔</span> ハマスタおすすめグルメ</span>
+                <span class="text-xs font-normal text-blue-600 no-print">
+                    <a href="https://www.yokohama-stadium.co.jp/foods-shop/" target="_blank" class="hover:underline">フードショップ一覧 ↗</a>
+                </span>
             </h2>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                <!-- みかん氷 -->
                 <div class="border border-slate-100 rounded-2xl p-4 bg-orange-50/50 hover:shadow-md transition">
                     <span class="text-2xl">🍧</span>
                     <div class="flex justify-between items-start mt-2">
                         <h4 class="font-extrabold text-slate-800">みかん氷</h4>
                         <span class="text-xs font-bold text-orange-600 bg-orange-100 px-2 py-0.5 rounded">600円</span>
                     </div>
-                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">ハマスタ不動の王者。シャリシャリの氷に甘いシロップとみかんがどっさり！ナイターに最高！</p>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">ハマスタ不動の王者。シャリシャリの氷に甘いシロップ and みかんがどっさり！ナイターに最高！</p>
                 </div>
 
-                <!-- ベイカラ -->
                 <div class="border border-slate-100 rounded-2xl p-4 bg-yellow-50/40 hover:shadow-md transition">
                     <span class="text-2xl">🍗</span>
                     <div class="flex justify-between items-start mt-2">
@@ -482,7 +426,6 @@
                     <p class="text-xs text-slate-500 mt-2 leading-relaxed">外はカリッと中はジューシー。たっぷりとまぶされる「グラナパダーノチーズ」がビールに最適！</p>
                 </div>
 
-                <!-- ベイ餃子 -->
                 <div class="border border-slate-100 rounded-2xl p-4 bg-emerald-50/30 hover:shadow-md transition">
                     <span class="text-2xl">🥟</span>
                     <div class="flex justify-between items-start mt-2">
@@ -492,7 +435,6 @@
                     <p class="text-xs text-slate-500 mt-2 leading-relaxed">中華街の老舗「江戸清」との共同開発。タレを付けなくても味が濃厚で美味いジャンボ餃子！</p>
                 </div>
 
-                <!-- 目玉チャーハン -->
                 <div class="border border-slate-100 rounded-2xl p-4 bg-slate-50 hover:shadow-md transition sm:col-span-1 md:col-span-1">
                     <span class="text-2xl">🍳</span>
                     <div class="flex justify-between items-start mt-2">
@@ -502,31 +444,26 @@
                     <p class="text-xs text-slate-500 mt-2 leading-relaxed">関係者食堂で選手に愛され続けた裏メニュー。２つの黄身をスプーンで崩しながら食べる幸せ！</p>
                 </div>
 
-                <!-- 青星寮カレー -->
                 <div class="border border-slate-100 rounded-2xl p-4 bg-red-50/30 hover:shadow-md transition sm:col-span-2 md:col-span-2">
                     <span class="text-2xl">🍛</span>
                     <div class="flex justify-between items-start mt-2">
                         <h4 class="font-extrabold text-slate-800">青星寮カレー（レギュラー）</h4>
                         <span class="text-xs font-bold text-red-700 bg-red-100 px-2 py-0.5 rounded">1,050円</span>
                     </div>
-                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">若手選手が暮らす「青星寮」の伝統の味。現在はトマトの酸味が加わり、よりスパイシーに旨みマニア向けにパワーアップ中！</p>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">若手選手が暮らす「青星寮」の伝統の味。現在はトマトの酸味が加わり、よりスパイシーにパワーアップして提供中！</p>
                 </div>
             </div>
         </div>
 
-        <!-- 4ページ目：マスコット＆便利アプリ（改ページ調整） -->
         <div class="print-card print-break-before bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
             <h2 class="text-xl font-bold text-baystars-navy flex items-center gap-2 mb-6 pb-2 border-b border-slate-100">
                 <span>🐹</span> 球団マスコット紹介
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- スターマン ＆ キララ -->
                 <div class="border border-slate-100 rounded-2xl p-4 flex gap-4 bg-blue-50/20 group relative overflow-hidden">
-                    <!-- 画像アップロード対応の丸型アバター -->
                     <div class="relative w-16 h-16 rounded-full bg-slate-200 shrink-0 flex items-center justify-center font-bold text-2xl border-2 border-dashed border-slate-300 overflow-hidden">
-                        <!-- ※HTML直接編集用：src="starman.jpg" のように書き換え可能 -->
-                        <img id="preview-mascot-sk" src="imege/suta.jpg" class="absolute inset-0 w-full h-full object-cover rounded-full z-10">
+                        <img id="preview-mascot-sk" src="images/suta.jpg" class="absolute inset-0 w-full h-full object-cover rounded-full z-10">
                         <span id="placeholder-mascot-sk" class="hidden z-0">🐹</span>
                     </div>
                     <div>
@@ -537,12 +474,9 @@
                     </div>
                 </div>
 
-                <!-- バート ＆ チャピー -->
                 <div class="border border-slate-100 rounded-2xl p-4 flex gap-4 bg-slate-50 group relative overflow-hidden">
-                    <!-- 画像アップロード対応の丸型アバター -->
                     <div class="relative w-16 h-16 rounded-full bg-slate-200 shrink-0 flex items-center justify-center font-bold text-2xl border-2 border-dashed border-slate-300 overflow-hidden">
-                        <!-- ※HTML直接編集用：src="bart.jpg" のように書き換え可能 -->
-                        <img id="preview-mascot-bc" src="imege/c&b.jpg" class="absolute inset-0 w-full h-full object-cover rounded-full z-10">
+                        <img id="preview-mascot-bc" src="images/c&b.jpg" class="absolute inset-0 w-full h-full object-cover rounded-full z-10">
                         <span id="placeholder-mascot-bc" class="hidden z-0">👽</span>
                     </div>
                     <div>
@@ -553,12 +487,9 @@
                     </div>
                 </div>
 
-                <!-- トラッキー -->
                 <div class="border border-yellow-200 rounded-2xl p-4 flex gap-4 bg-yellow-50/50 md:col-span-2 group relative overflow-hidden">
-                    <!-- 画像アップロード対応の丸型アバター -->
                     <div class="relative w-16 h-16 rounded-full bg-slate-200 shrink-0 flex items-center justify-center font-bold text-2xl border-2 border-dashed border-slate-300 overflow-hidden">
-                        <!-- ※HTML直接編集用：src="tolucky.jpg" のように書き換え可能 -->
-                        <img id="preview-mascot-to" src="tora.png" class="absolute inset-0 w-full h-full object-cover rounded-full z-10">
+                        <img id="preview-mascot-to" src="images/tora.png" class="absolute inset-0 w-full h-full object-cover rounded-full z-10">
                         <span id="placeholder-mascot-to" class="hidden z-0">🐯</span>
                     </div>
                     <div>
@@ -574,45 +505,12 @@
             </div>
         </div>
 
-        <!-- フッター -->
         <div class="text-center mt-12 no-print">
             <p class="text-xs text-slate-400">Copyright © YOKOHAMA DeNA BAYSTARS All Rights Reserved.</p>
             <p class="text-[10px] text-slate-300 mt-1">This pamphlet is formatted for A4 PDF / Print.</p>
         </div>
 
     </div>
-
-    <!-- SVGアロー定義（簡易ハマスタマップ用） -->
-    <svg width="0" height="0" class="absolute">
-        <defs>
-            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444"/>
-            </marker>
-        </defs>
-    </svg>
-
-    <!-- JavaScript：ローカルの画像選択時にリアルタイムでプレビューを表示する処理 -->
-    <script>
-        function previewImage(input, previewId, placeholderId) {
-            const file = input.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = document.getElementById(previewId);
-                    const placeholder = document.getElementById(placeholderId);
-                    
-                    img.src = e.target.result;
-                    img.classList.remove('hidden');
-                    
-                    // プレースホルダー（絵文字など）を非表示にする
-                    if (placeholder) {
-                        placeholder.classList.add('hidden');
-                    }
-                }
-                reader.readAsDataURL(file);
-            }
-        }
-    </script>
 
 </body>
 </html>
